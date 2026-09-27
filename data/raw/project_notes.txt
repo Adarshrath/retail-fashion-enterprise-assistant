@@ -1,0 +1,1 @@
+Retail Fashion Enterprise Assistant: The system analyzes Zara fashion product data, estimates demand from product attributes, recommends similar products, retrieves policy/product knowledge with RAG, and routes business tasks to specialist agents.
