@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 from src.data_utils import load_data
 from src.demand_model import estimate
@@ -10,6 +11,14 @@ from src.recommendation import recommend
 from src.rag.engine import RAG
 from src.agents.system import Supervisor
 st.set_page_config(page_title="Retail Fashion Enterprise Assistant",layout="wide")
+
+# Inject Vercel Web Analytics script
+components.html(
+    """
+    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+    """,
+    height=0,
+)
 df=load_data()
 st.title("Retail Fashion Enterprise Assistant")
 st.caption("Kaggle Zara Fashion Sales Dataset • EDA • Demand Estimation • Recommendations • RAG • Agents")
